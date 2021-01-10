@@ -1,7 +1,7 @@
 const endpoint = 'https://ancient-taiga-31359.herokuapp.com/api/houses';
 
 class HousesAPI {
-  get = async () => {
+  async get() {
     try {
       const resp = await fetch(endpoint);
       const data = await resp.json();
@@ -11,7 +11,7 @@ class HousesAPI {
     }
   }
 
-  put = async (house) => {
+  async put(house) {
     try {
       const resp = await fetch(`${endpoint}/${house._id}`, {
         method: 'PUT',
